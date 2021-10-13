@@ -42,6 +42,6 @@ class Joystick:
 while True:
   xValue=Joystick()
   yValue=Joystick()
-  print(xValue.getX)
-  print(yValue.getY)
+  print(xValue.getX())
+  print(yValue.getY())
   time.sleep(0.1)
