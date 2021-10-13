@@ -1,6 +1,7 @@
 #   To check address: sudo i2cdetect -y 1
 
 import smbus
+import time
 
 class PCF8591:
 
@@ -23,7 +24,7 @@ class PCF8591:
           print ("Error: Device address: 0x%2X \n%s" % (self.address,e))
 
 xValue=PCF8591(0x48)
-
 while True:
   currentX=xValue.read(0)
   print(currentX)
+  time.sleep(0.1)
