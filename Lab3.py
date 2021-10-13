@@ -23,8 +23,16 @@ class PCF8591:
       except Exception as e:
           print ("Error: Device address: 0x%2X \n%s" % (self.address,e))
 
-xValue=PCF8591(0x48)
+class Joystick:
+  def __init__(self,address):
+    self.address = PCF8591(address)
+  def getX(self):
+    return self.address.read(0)
+  def getY(self):
+    return self.address.read(1)
+
+
 while True:
-  currentX=xValue.read(0)
-  print(currentX)
+  myJoystick=Joystick(0X48)
+  print(myJoystick.getX(),",",myJoystick.getY())
   time.sleep(0.1)
