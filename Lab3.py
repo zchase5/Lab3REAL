@@ -23,6 +23,7 @@ class PCF8591:
           print ("Error: Device address: 0x%2X \n%s" % (self.address,e))
 
 xValue=PCF8591(1)
+print(xValue.address)
 while True:
   currentX=xValue.read()
   print(currentX)
