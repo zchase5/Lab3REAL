@@ -22,7 +22,7 @@ class PCF8591:
       except Exception as e:
           print ("Error: Device address: 0x%2X \n%s" % (self.address,e))
 
-xValue=PCF8591(1)
+xValue=PCF8591(0)
 while True:
   currentX=xValue.read(0)
   print(currentX)
