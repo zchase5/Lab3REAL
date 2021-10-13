@@ -10,7 +10,7 @@ class PCF8591:
 
   def read(self,chn): #channel
       try:
-          self.bus.write_byte(self.address, 0x48 | chn)  # 01000000
+          self.bus.write_byte(self.address, 0x40 | chn)  # 01000000
           self.bus.read_byte(self.address) # dummy read to start conversion
       except Exception as e:
           print ("Address: %s \n%s" % (self.address,e))
@@ -22,7 +22,8 @@ class PCF8591:
       except Exception as e:
           print ("Error: Device address: 0x%2X \n%s" % (self.address,e))
 
-xValue=PCF8591(1)
+xValue=PCF8591(0x48)
+
 while True:
   currentX=xValue.read(0)
   print(currentX)
