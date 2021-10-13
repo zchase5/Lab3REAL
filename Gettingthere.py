@@ -39,7 +39,7 @@ class Joystick:
 #  print(currentX)
 #  time.sleep(0.1)
 while True:
-  myJoystick=Joystick()
+  myJoystick=Joystick(0X48)
   print(myJoystick.getX())
   print(myJoystick.getY())
   time.sleep(0.1)
