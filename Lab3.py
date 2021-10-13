@@ -24,5 +24,5 @@ class PCF8591:
 
 xValue=PCF8591(1)
 while True:
-  currentX=xValue.read(1)
+  currentX=xValue.read(0)
   print(currentX)
